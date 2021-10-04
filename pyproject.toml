@@ -8,6 +8,8 @@ authors = ["Samir Azzouz <s.azzouz97@gmail.com>"]
 python = "^3.8"
 jupyterlab = "^3.1.10"
 Scrapy = "^2.5.0"
+Django = "^3.2.7"
+beautifulsoup4 = "^4.10.0"
 
 [tool.poetry.dev-dependencies]
 

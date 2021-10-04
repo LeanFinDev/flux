@@ -1,15 +1,46 @@
 import React from "react";
-import logo from "./logo.svg";
+import { Switch, Route, Link } from "react-router-dom";
+import { Layout, Typography, Space } from "antd";
+import {
+  Navbar,
+  Homepage,
+  Exchanges,
+  News,
+  Crypto,
+  CryptoDetail,
+} from "./components";
 import "./App.css";
-import LandingPage from "./LandingPage";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <LandingPage />
-      </header>
+    <div className="app">
+      <div className="navbar">
+        <Navbar />
+      </div>
+      <div className="main">
+        <Layout>
+          <div className="routes">
+            <Switch>
+              <Route exact path="/">
+                <Homepage />
+              </Route>
+              <Route exact path="/crypto">
+                <Crypto />
+              </Route>
+              <Route exact path="/crypto/:coinId">
+                <CryptoDetail />
+              </Route>
+              <Route exact path="/exchanges">
+                <Exchanges />
+              </Route>
+              <Route exact path="/news">
+                <News />
+              </Route>
+            </Switch>
+          </div>
+        </Layout>
+      </div>
+      <div className="footer"></div>
     </div>
   );
 }
